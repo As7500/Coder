@@ -1,0 +1,50 @@
+.all-answers {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+.all-answer-container {
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+.answer-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.answer-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.anwer-comment {
+  background-color: #5243a7;
+}
+.anwer-comment:hover {
+  color: #eee;
+  background-color: #130b43;
+}
+.like-button-answer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 50px;
+}
+.like-button-answer:hover,
+.like-button-answer.liked {
+  color: #f44336;
+}

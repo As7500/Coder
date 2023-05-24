@@ -1,0 +1,32 @@
+.contibutor-points {
+  --tw-shadow: var(--box-shadow-sm);
+  --tw-shadow-colored: var(--box-shadow-sm);
+  align-items: center;
+  background-clip: padding-box, border-box;
+  background-color: var(--backgroundColorA);
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#20f, #9e00ff);
+  background-image: linear-gradient(#130b43, #130b43),
+    linear-gradient(#9e00ff, #20f);
+  background-origin: border-box;
+  border: 3px solid transparent;
+  border-radius: 100px;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  color: #fbfcfe;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+}
+.badge-icon {
+  filter: invert(88%) sepia(37%) saturate(870%) hue-rotate(355deg)
+    brightness(90%) contrast(96%);
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+}

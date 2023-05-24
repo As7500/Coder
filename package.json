@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@headlessui/react": "^1.7.14",
+    "react-feather": "^2.0.10",
+    "react-quill": "^2.0.0",
+    "socket.io-client": "^4.6.1"
+  }
+}

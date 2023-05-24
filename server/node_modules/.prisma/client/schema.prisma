@@ -1,0 +1,79 @@
+  // This is your Prisma schema file,
+  // learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+ 
+  generator client {
+    provider = "prisma-client-js"
+  }
+
+  
+  datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+  }
+
+  
+
+
+  model User {
+    id              String    @id @default(uuid())
+    githubId        String?   @unique
+    username        String?   @unique
+    photoUrl        String?
+    createdAt       DateTime  @default(now())
+    updatedAt       DateTime
+    posts           Post[]
+    answers         Answer[]
+    likes           Like[]
+    notifications   Notification[]
+  }
+
+
+  model Post{
+    id  String    @id @default(uuid())
+    title String
+    body String
+    user User @relation(fields: [userId], references: [id])
+    userId String
+    createdAt       DateTime  @default(now())
+    updatedAt       DateTime
+    tags            String[]
+    answers         Answer[]
+    likes           Like[]
+  }
+
+
+  model Answer {
+    id          String   @id @default(uuid())
+    body        String
+    user        User     @relation(fields: [userId], references: [id])
+    userId      String
+    post        Post     @relation(fields: [postId], references: [id])
+    postId      String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime
+    likes       Like[]
+  }
+
+
+model Like {
+  id          String    @id @default(uuid())
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  post        Post?     @relation(fields: [postId], references: [id])
+  postId      String?
+  answer      Answer?   @relation(fields: [answerId], references: [id])
+  answerId    String?
+  createdAt   DateTime  @default(now())
+}
+
+model Notification {
+  id          String    @id @default(uuid())
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  message     String
+  read        Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime
+  broadcast Boolean @default(false)
+}
